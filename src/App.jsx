@@ -1,12 +1,12 @@
 import './App.scss';
-import Timepicker from './components/Timepicker/Timepicker';
+import SetReminderForm from './components/SetReminderForm/SetReminderForm';
 
 function App() {
 
   return (
     <div>
 
-      <Timepicker />
+      <SetReminderForm/>
       
     </div>
   );

@@ -1,48 +1,37 @@
 import React, { useState } from 'react';
-import style from './Timepicker.module.scss';
+import style from './TimePicker.module.scss';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Timepicker() {
-
-    const [date, setDate] = useState(new Date());
+function TimePicker({date, setDate}) {
 
     function handleChange(date) {
 
         setDate(date);
     }
 
-    function onFormSubmit(event) {
-
-        event.preventDefault();
+    function onFormSubmit() {
 
         console.log(date);
     }
 
     return (
-        <div className={style.Timepicker}>
+        <div className={style.TimePicker}>
 
-            <form onSubmit = {event => onFormSubmit(event)}>
-
-                <div className="form-group">
-
-                    <DatePicker
-                        selected={date}
-                        onChange={handleChange}
-                        name="startDate"
-                        dateFormat="MM/dd/yyyy"
-                    />
-
-                    <button className="btn btn-primary">Show Date</button>
-
-                </div>
-
-            </form>
+            <DatePicker
+                selected={date}
+                onChange={handleChange}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={20}
+                timeCaption="time"
+                dateFormat="MMMM d, yyyy h:mm aa"
+            />
 
         </div>
     )
 
 }
 
-export default Timepicker;
+export default TimePicker;
