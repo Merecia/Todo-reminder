@@ -1,0 +1,47 @@
+.Wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(7px);
+    height: 100%;
+    display: block;
+
+    .Form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: auto;
+        margin: auto;
+        max-height: 70vh;
+        margin-top: calc(100vh - 85vh - 20px);
+        background: #fff;
+        border-radius: 4px;
+        padding: 20px;
+        border: 1px solid #999;
+        overflow: auto;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .7);
+
+        textarea {
+            display: block;
+        }
+
+        .CloseIcon {
+            content: 'x';
+            cursor: pointer;
+            position: fixed;
+            right: calc(30% - 30px);
+            top: calc(100vh - 85vh - 33px);
+            background: #ededed;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid #999;
+            font-size: 20px;
+        }
+    }
+}

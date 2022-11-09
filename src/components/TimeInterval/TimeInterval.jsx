@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addDays, addHours, addMinutes, addMonths, getDateWithoutTime, getTimeWithoutDate } from '../../helper/date';
+import { addDays, addHours, addMinutes, addMonths, convertTimeZone, getDateWithoutTime, getTimeWithoutDate } from '../../helper/date';
 import style from './TimeInterval.module.scss';
 
 function TimeInterval({ date, setDate }) {
@@ -29,7 +29,9 @@ function TimeInterval({ date, setDate }) {
 
     function updateDate(amountOfTime, unitOfTime) {
 
-        let updatedDate = new Date();
+        const GMT = 2;
+
+        let updatedDate = convertTimeZone(new Date(), GMT);
 
         if (amountOfTime.length > 0) {
 

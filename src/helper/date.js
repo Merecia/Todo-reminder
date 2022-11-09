@@ -26,14 +26,32 @@ function addMonths(date, months) {
     return date;
 }
 
+function convertTimeZone(date, GMT) {
+
+    return addHours(date, GMT);
+}
+
 function getDateWithoutTime(date) {
 
-    return date.toISOString().slice(0, 10);
+    if (typeof(date) === 'object') return date.toISOString().slice(0, 10);
+
+    return date.slice(0, 10);
 }
 
 function getTimeWithoutDate(date) {
 
-    return date.toISOString().slice(11, 19);
+    if (typeof date === 'object') return date.toISOString().slice(11, 19);
+
+    return date.slice(11,19);
 }
 
-export {addMinutes, addHours, addDays, addMonths, getDateWithoutTime, getTimeWithoutDate};
+function removeMilliseconds(date) {
+
+    if (typeof date === 'object') return date.toISOString().slice(0, -5);
+
+    return date.slice(0, -5);
+}
+
+export {addMinutes, addHours, addDays, addMonths, 
+    getDateWithoutTime, getTimeWithoutDate, 
+    removeMilliseconds, convertTimeZone};

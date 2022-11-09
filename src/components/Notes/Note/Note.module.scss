@@ -1,0 +1,20 @@
+.Note {
+    width: 300px;
+    height: 170px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.Tick {
+    display: flex;
+    align-items: center;
+    color: green;
+}
+
+.TickMark {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}

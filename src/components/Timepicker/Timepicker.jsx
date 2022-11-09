@@ -11,11 +11,6 @@ function TimePicker({date, setDate}) {
         setDate(date);
     }
 
-    function onFormSubmit() {
-
-        console.log(date);
-    }
-
     return (
         <div className={style.TimePicker}>
 
@@ -24,7 +19,7 @@ function TimePicker({date, setDate}) {
                 onChange={handleChange}
                 showTimeSelect
                 timeFormat="HH:mm"
-                timeIntervals={20}
+                timeIntervals={1}
                 timeCaption="time"
                 dateFormat="MMMM d, yyyy h:mm aa"
             />
