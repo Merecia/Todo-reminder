@@ -5,7 +5,7 @@ import { addDays, addHours, addMinutes,
 } from '../../../helper/date';
 import style from './TimeInterval.module.scss';
 
-function TimeInterval({ date, setDate }) {
+function TimeInterval({ reminderDate, setReminderDate }) {
 
     const [inputValue, setInputValue] = useState('');
     const [chosenOption, setChosenOption] = useState('minutes');
@@ -65,7 +65,7 @@ function TimeInterval({ date, setDate }) {
 
         }
 
-        setDate(updatedDate);
+        setReminderDate(updatedDate);
     }
 
     return (
@@ -91,8 +91,8 @@ function TimeInterval({ date, setDate }) {
 
             <p style = {{margin: '15px 0px'}}> Напоминание сработает в: </p>
 
-            <input type="date" value = {getDateWithoutTime(date)} readOnly/>
-            <input type="time" value = {getTimeWithoutDate(date)} readOnly/>
+            <input type="date" value = {getDateWithoutTime(reminderDate)} readOnly/>
+            <input type="time" value = {getTimeWithoutDate(reminderDate)} readOnly/>
 
         </div>
     );

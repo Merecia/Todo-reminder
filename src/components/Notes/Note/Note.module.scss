@@ -26,6 +26,7 @@
     margin-bottom: 10px;
 
     .Left {
+        cursor: pointer;
         
         .Title {
             font-size: 18px;
@@ -38,6 +39,10 @@
             line-height: 17px;
             font-weight: 400;
             color: #888888;
+        }
+
+        .Describe {
+            font-size: 14px;
         }
     }
 

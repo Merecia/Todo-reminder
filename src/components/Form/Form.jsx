@@ -91,8 +91,14 @@ function Form() {
 
                 {
                     chosenOption === 'timePicker'
-                        ? <TimePicker date={reminderDate} setDate={setReminderDate} />
-                        : <TimeInterval date={reminderDate} setDate={setReminderDate} />
+                        ? <TimePicker 
+                            reminderDate={reminderDate} 
+                            setReminderDate={setReminderDate} 
+                        />
+                        : <TimeInterval 
+                            reminderDate={reminderDate} 
+                            setReminderDate={setReminderDate} 
+                        />
                 }
 
                 <Button

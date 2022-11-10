@@ -4,7 +4,7 @@ import Notes from './components/Notes/Notes';
 import Reminder from './components/Reminder/Reminder';
 import Form from './components/Form/Form';
 import { useReminder } from './context/ReminderContext/ReminderContext';
-import { convertTimeZone, getTimeWithoutDate, removeMilliseconds, removeSeconds } from './helper/date';
+import { convertTimeZone, getPrettyTime, getTimeWithoutDate, removeMilliseconds, removeSeconds } from './helper/date';
 import useInterval from './hooks/useInterval';
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
 
           <p className={style.Date}>
 
-            { getTimeWithoutDate(currentDate).slice(0, -3) }
+            { getPrettyTime(currentDate) }
 
           </p>
 

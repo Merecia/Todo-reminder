@@ -61,16 +61,47 @@ function removeSeconds(date) {
 
 function getPrettyDate(date) {
 
-    const dateWithoutTime = getDateWithoutTime(date);
+    const GMT = 2;
+
+    const currentDate = convertTimeZone(new Date(), GMT);
+
+    let tomorrow = new Date();
+    let yesterday = new Date();
+
+    tomorrow.setDate(currentDate.getDate() + 1);
+    yesterday.setDate(currentDate.getDate() - 1);
+
+    if (getDateWithoutTime(currentDate) === getDateWithoutTime(date)) {
+        return 'Сегодня';
+    }
+
+    else if (getDateWithoutTime(tomorrow) === getDateWithoutTime(date)) {
+        return 'Завтра';
+    }
+
+    else if (getDateWithoutTime(yesterday) === getDateWithoutTime(date)) {
+        return 'Вчера';
+    }
+
+    return getDateWithoutTime(date).split('-').reverse().join('.');
+}
+
+function isValidDate(date) {
+
+    return date instanceof Date && !isNaN(date);
+}
+
+function getPrettyTime(date) {
 
     const timeWithoutDate = getTimeWithoutDate(date);
 
-    console.log(date);
+    return timeWithoutDate.slice(0, -3);
 }
 
 export {
     addMinutes, addHours, addDays, addMonths, 
     getDateWithoutTime, getTimeWithoutDate, 
     removeMilliseconds, removeSeconds,
-    convertTimeZone
+    convertTimeZone, getPrettyDate, getPrettyTime,
+    isValidDate
 };
