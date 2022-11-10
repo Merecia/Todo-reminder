@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useReminder } from '../../context/ReminderContext/ReminderContext';
 import { convertTimeZone } from '../../helper/date';
-import Button from '../Button/Button';
-import Dropdown from '../Dropdown/Dropdown';
+import Button from '../GUI/Button/Button';
+import Dropdown from '../GUI/Dropdown/Dropdown';
 import TimeInterval from '../TimeInterval/TimeInterval';
-import TimePicker from '../TimePicker/TimePicker';
+import TimePicker from './TimePicker/TimePicker';
 import style from './Form.module.scss';
 
 function SetReminderForm() {
