@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Input.module.scss'
 
-function Input( {placeholder, label, onChange, value} ) {
+function Input( {placeholder, label, onChange, value, width, height} ) {
 
     return (
         <div className = {style.Input}>
@@ -12,6 +12,7 @@ function Input( {placeholder, label, onChange, value} ) {
                 type="text" 
                 placeholder = {placeholder} 
                 value = {value} 
+                style = {{width, height}}
                 onChange = {onChange} 
             />
 

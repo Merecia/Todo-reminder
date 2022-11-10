@@ -1,4 +1,4 @@
-.Input {
+.Textarea {
     margin-bottom: 25px;
 
     p {
@@ -7,8 +7,9 @@
         font-size: 18px;
     }
 
-    input {
+    textarea {
         padding: 3px;
-        width: 600px;;
+        width: 600px;
+        resize: none;
     }
 }

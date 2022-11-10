@@ -80,6 +80,9 @@ function ReminderState( { children } ) {
 
     const deleteNote = id => {
 
+        console.log(id);
+        console.log('Удаление');
+
         let notes = state.notes;
 
         notes = notes.filter(note => note.id !== id)

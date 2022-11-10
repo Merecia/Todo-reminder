@@ -29,8 +29,6 @@ function App() {
 
   useInterval(() => {
 
-    console.log(currentDate);
-
     const now = convertTimeZone(new Date(), GMT).toISOString();
 
     if (notes) {

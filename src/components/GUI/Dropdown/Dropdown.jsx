@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './Dropdown.module.scss';
 
-function Dropdown({options, chosenOption, changeOptionHandler}) {
+function Dropdown({options, chosenOption, changeOptionHandler, margin}) {
 
     function renderOptions(options) {
 
@@ -21,6 +21,7 @@ function Dropdown({options, chosenOption, changeOptionHandler}) {
         return <option 
             key = {key}
             value = {option.value}
+            style = {{margin}}
         > 
             {option.label} 
         </option>

@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { useReminder } from '../../context/ReminderContext/ReminderContext';
 import { convertTimeZone } from '../../helper/date';
 import Button from '../GUI/Button/Button';
+import Input from '../GUI/Input/Input';
+import Textarea from '../GUI/Textarea/Textarea';
 import Dropdown from '../GUI/Dropdown/Dropdown';
-import TimeInterval from '../TimeInterval/TimeInterval';
+import TimeInterval from './TimeInterval/TimeInterval';
 import TimePicker from './TimePicker/TimePicker';
 import style from './Form.module.scss';
 
-function SetReminderForm() {
+function Form() {
 
     const GMT = 2;
     const currentDate = convertTimeZone(new Date(), GMT);
 
     const { addNote, hideForm } = useReminder();
-
-    console.log(hideForm);
 
     const [chosenOption, setChosenOption] = useState('timePicker');
     const [reminderDate, setReminderDate] = useState(currentDate);
@@ -51,6 +51,7 @@ function SetReminderForm() {
             reminderDate
         });
 
+        hideForm();
     }
 
     return (
@@ -66,20 +67,20 @@ function SetReminderForm() {
                     x
                 </span>
 
-                <p> Enter title of your task </p>
-
-                <input
-                    type="text"
-                    value={title}
+                <Input 
+                    label = 'Введите заголовок задачи'
+                    value = {title}
                     onChange={changeTitleHandler}
+                    width = '90%'
+                    height = '10px'
                 />
 
-                <p> Enter describe your task </p>
-
-                <textarea
-                    cols="30"
-                    rows="8"
-                    onChange={changeDescribeHandler}
+                <Textarea 
+                    label = 'Введите описание задачи'
+                    onChange = {changeDescribeHandler}
+                    value = {describe}
+                    width = '90%'
+                    height = '100px'
                 />
 
                 <Dropdown
@@ -95,9 +96,14 @@ function SetReminderForm() {
                 }
 
                 <Button
-                    label='Добавить напоминание'
+                    isActive = {title && describe}
                     onClick={buttonClickHandler}
-                />
+                    color = 'Purple'
+                    width = '93%'
+                    height = '50px'
+                >
+                    Добавить напоминание
+                </Button>
 
             </div>
             
@@ -106,4 +112,4 @@ function SetReminderForm() {
 
 }
 
-export default SetReminderForm;
+export default Form;

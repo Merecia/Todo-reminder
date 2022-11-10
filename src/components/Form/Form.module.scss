@@ -6,6 +6,7 @@
     height: 100%;
     display: block;
     z-index: 100;
+    font-family: Inter;
 
     .Form {
         position: absolute;
@@ -13,7 +14,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        width: 40%;
+        width: 30%;
         height: auto;
         margin: auto;
         max-height: 70vh;
@@ -33,7 +34,7 @@
             content: 'x';
             cursor: pointer;
             position: fixed;
-            right: calc(30% - 30px);
+            right: calc(35% - 30px);
             top: calc(100vh - 85vh - 33px);
             background: #ededed;
             width: 25px;

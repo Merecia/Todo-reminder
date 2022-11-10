@@ -8,24 +8,8 @@ function Note( {id, title, describe, reminderDate} ) {
 
     const {deleteNote} = useReminder();
 
-    // function tickClickHandler() {
-        
-    //     deleteNote(id);
-    // }
-
     return (
         <div className = {style.Note}>
-
-            {/* <div className = {style.Content}>
-                <p> Заголовок: {title} </p>
-                <p> Описание: {describe} </p>
-                <p> Дата напоминания: { getDateWithoutTime(reminderDate) } </p>
-                <p> Время напоминания: { getTimeWithoutDate(reminderDate) } </p>
-            </div>
-
-            <div className = {style.Tick} onClick = {tickClickHandler}> 
-                <span className = {style.TickMark}> {'\u2713'} </span>
-            </div> */}
 
             <div className = {style.Left}>
 
@@ -43,7 +27,12 @@ function Note( {id, title, describe, reminderDate} ) {
 
                 <div className = {style.Circle}> </div>
 
-                <img src={trash} alt="trash" className = {style.Trash} />
+                <img 
+                    src={trash} 
+                    alt="trash" 
+                    className = {style.Trash} 
+                    onClick = {() => deleteNote(id)}
+                />
 
             </div>
 

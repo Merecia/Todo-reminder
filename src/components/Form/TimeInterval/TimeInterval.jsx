@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { addDays, addHours, addMinutes, addMonths, convertTimeZone, getDateWithoutTime, getTimeWithoutDate } from '../../helper/date';
+import { addDays, addHours, addMinutes, 
+    addMonths, convertTimeZone, 
+    getDateWithoutTime, getTimeWithoutDate 
+} from '../../../helper/date';
+import Dropdown from '../../GUI/Dropdown/Dropdown';
 import style from './TimeInterval.module.scss';
 
 function TimeInterval({ date, setDate }) {
@@ -65,6 +69,11 @@ function TimeInterval({ date, setDate }) {
         setDate(updatedDate);
     }
 
+    const options = [
+        { label: 'минут (минуты)', value: 'timePicker' },
+        { label: 'Через промежуток времени', value: 'timeInterval' }
+    ];
+
     return (
         <div className={style.TimeInterval}>
 
@@ -86,7 +95,7 @@ function TimeInterval({ date, setDate }) {
                 <option value="months"> месяцев (месяца) </option>
             </select>
 
-            <p> Напоминание сработает в: </p>
+            <p style = {{margin: '15px 0px'}}> Напоминание сработает в: </p>
 
             <input type="date" value = {getDateWithoutTime(date)} readOnly/>
             <input type="time" value = {getTimeWithoutDate(date)} readOnly/>
