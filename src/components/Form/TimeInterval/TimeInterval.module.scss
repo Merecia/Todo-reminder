@@ -14,4 +14,12 @@
     input[type=date], input[type=time] {
         height: 15px;
     }
+
+    input[type=number] {
+        margin-right: 20px;
+    }
+
+    input[type=date] {
+        margin-right: 20px;
+    }
 }
