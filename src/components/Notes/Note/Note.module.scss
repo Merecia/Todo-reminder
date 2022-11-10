@@ -1,20 +1,71 @@
+// .Note {
+//     width: 300px;
+//     height: 170px;
+//     border: 1px solid black;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 10px 20px;
+// }
+
+// .Tick {
+//     display: flex;
+//     align-items: center;
+//     color: green;
+// }
+
+// .TickMark {
+//     width: 10px;
+//     height: 10px;
+//     cursor: pointer;
+// }
+
 .Note {
-    width: 300px;
-    height: 170px;
-    border: 1px solid black;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
-}
+    margin-bottom: 10px;
 
-.Tick {
-    display: flex;
-    align-items: center;
-    color: green;
-}
+    .Left {
+        
+        .Title {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+        }
 
-.TickMark {
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
+        .Date {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 400;
+            color: #888888;
+        }
+    }
+
+    .Right {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .Circle {
+            display: block;
+            border-radius: 90px;
+            border: 2px solid #20EEB0;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
+            }
+        }
+
+        .Trash {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
 }

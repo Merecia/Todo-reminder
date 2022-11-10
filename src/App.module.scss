@@ -1,4 +1,109 @@
-.addingButton {
-    width: 30px;
-    height: 30px;
+@font-face {
+    font-family: 'Russo One';
+    src: local('Russo One'), url(./fonts/RussoOne-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), url(./fonts/Inter-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    src: local('Lato'), url(./fonts/Inter-Medium.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    background-color: #EEEEEE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    .MainForm {
+        border: 1px solid black;
+        background-color: white;
+        margin-top: 50px;
+        width: 430px;
+        height: auto;
+        margin: 40px auto;
+        border-radius: 10px;
+
+        .Header {
+            position: relative;
+            background-image: url('./images/flowers.svg');
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            color: white;
+            width: 430px;
+            height: 202px;
+
+            .Date {
+                position: absolute;
+                font-family: Russo One;
+                bottom: 10%;
+                right: 10%;
+                margin: 0;
+                font-weight: 400;
+                font-size: 48px;
+                line-height: 58px;
+            }
+        }
+
+        .Content {
+            font-family: Inter;
+
+            .SearchSection {
+                display: flex;
+                width: 370px;
+                justify-content: space-between;
+                margin: 0 auto;
+
+                .SearchBar {
+                    background: #EBEFF2;
+                    width: 250px;
+                    height: 49px;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    border: 0px;
+
+
+                    &:placeholder {
+                        color: #888888;
+                        font-size: 16px;
+                        font-weight: 100;
+                        line-height: 19px;
+                    }
+                }
+
+                .PlusButton {
+                    background-color: #20EEB0;
+                    padding: 11px;
+                    color: white;
+                    border: 0px;
+                    width: 50px;
+                    border-radius: 5px;
+                    font-size: 24px;
+                    cursor: pointer;
+
+                    &:hover {
+                        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
+                    }
+                }
+            }
+
+            .NotesSection {
+                display: flex;
+                width: 370px;
+                margin: 0 auto;
+            }
+        }
+    }
 }

@@ -5,6 +5,7 @@
     backdrop-filter: blur(7px);
     height: 100%;
     display: block;
+    z-index: 100;
 
     .Form {
         position: absolute;

@@ -52,6 +52,25 @@ function removeMilliseconds(date) {
     return date.slice(0, -5);
 }
 
-export {addMinutes, addHours, addDays, addMonths, 
+function removeSeconds(date) {
+
+    if (typeof date === 'object') return date.toISOString().slice(0, -8);
+
+    return date.slice(0, -8);
+}
+
+function getPrettyDate(date) {
+
+    const dateWithoutTime = getDateWithoutTime(date);
+
+    const timeWithoutDate = getTimeWithoutDate(date);
+
+    console.log(date);
+}
+
+export {
+    addMinutes, addHours, addDays, addMonths, 
     getDateWithoutTime, getTimeWithoutDate, 
-    removeMilliseconds, convertTimeZone};
+    removeMilliseconds, removeSeconds,
+    convertTimeZone
+};
