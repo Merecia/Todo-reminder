@@ -10,7 +10,7 @@ import useInterval from './hooks/useInterval';
 function App() {
 
   const {
-    notes, reminder, form, search,
+    notes, reminder, form,
     updateNotes, updateSearch,
     showReminder, showForm
   } = useReminder();

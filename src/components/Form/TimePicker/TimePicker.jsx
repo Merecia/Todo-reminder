@@ -29,8 +29,7 @@ function TimePicker({ reminderDate, setReminderDate }) {
         );
 
         if (isValidDate(updatedReminderDate)) {
-
-            console.log(updatedReminderDate);
+            
             setReminderDate(updatedReminderDate);
         }
 
@@ -53,7 +52,6 @@ function TimePicker({ reminderDate, setReminderDate }) {
 
         if (isValidDate(updatedReminderDate)) {
 
-            console.log(updatedReminderDate);
             setReminderDate(updatedReminderDate);
         }
 
