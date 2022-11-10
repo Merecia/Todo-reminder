@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import style from './TimePicker.module.scss';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TimePicker({date, setDate}) {
 

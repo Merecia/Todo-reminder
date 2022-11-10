@@ -23,8 +23,8 @@
         border-radius: 4px;
         padding: 20px;
         border: 1px solid #999;
-        overflow: auto;
         box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .7);
+        overflow-y: scroll;
 
         textarea {
             display: block;
@@ -45,5 +45,10 @@
             border: 1px solid #999;
             font-size: 20px;
         }
+    }
+
+    .Form::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
     }
 }

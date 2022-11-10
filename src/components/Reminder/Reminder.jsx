@@ -19,9 +19,9 @@ function Reminder({ note }) {
 
             <div className = {style.Content}>
 
-                <h1> {note.title} </h1>
+                <h1 className = {style.Title}> {note.title} </h1>
 
-                <p> {note.describe} </p>
+                <p className = {style.Describe}> {note.describe} </p>
 
             </div>
 

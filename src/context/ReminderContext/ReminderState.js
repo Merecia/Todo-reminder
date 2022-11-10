@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react';
-import { UPDATE_FORM, UPDATE_NOTES, UPDATE_REMINDER } from '../types';
+import { UPDATE_FORM, UPDATE_NOTES, UPDATE_REMINDER, UPDATE_SEARCH } from '../types';
 import { ReminderContext } from './ReminderContext';
 import { ReminderReducer } from './ReminderReducer';
 
@@ -8,7 +8,8 @@ function ReminderState( { children } ) {
     const initialState = {
         notes: [],
         reminder: null,
-        form: false
+        form: false,
+        search: ''
     };
 
     const [state, dispatch] = useReducer(ReminderReducer, initialState);
@@ -58,6 +59,15 @@ function ReminderState( { children } ) {
 
     }
 
+    const updateSearch = search => {
+
+        dispatch({
+            type: UPDATE_SEARCH,
+            search
+        });
+
+    }
+
     const addNote = note => {
 
         let notes = state.notes;
@@ -80,9 +90,6 @@ function ReminderState( { children } ) {
 
     const deleteNote = id => {
 
-        console.log(id);
-        console.log('Удаление');
-
         let notes = state.notes;
 
         notes = notes.filter(note => note.id !== id)
@@ -101,9 +108,10 @@ function ReminderState( { children } ) {
             notes: state.notes,
             reminder: state.reminder,
             form: state.form,
+            search: state.search,
             addNote, deleteNote, updateNotes,
             hideReminder, showReminder,
-            showForm, hideForm
+            showForm, hideForm, updateSearch
         }}>
             { children }
         </ReminderContext.Provider>

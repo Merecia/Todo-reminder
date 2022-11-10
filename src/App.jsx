@@ -10,8 +10,9 @@ import useInterval from './hooks/useInterval';
 function App() {
 
   const {
-    notes, reminder, form,
-    updateNotes, showReminder, showForm
+    notes, reminder, form, search,
+    updateNotes, updateSearch,
+    showReminder, showForm
   } = useReminder();
 
   const GMT = 2;
@@ -55,9 +56,12 @@ function App() {
   }, 1000);
 
   return (
+
     <div className={style.App}>
 
       { form && <Form /> }
+
+      { reminder && <Reminder note = {reminder}/> }
 
       <div className={style.MainForm}>
 
@@ -75,7 +79,13 @@ function App() {
 
           <div className={style.SearchSection}>
 
-              <input className={style.SearchBar} placeholder = "Поиск"></input>
+              <input 
+                className={style.SearchBar} 
+                placeholder = "Поиск"
+                onChange = {event => updateSearch(event.target.value)}
+              >
+
+              </input>
 
               <button className = {style.PlusButton} onClick = {showForm}> + </button>
               
@@ -90,14 +100,6 @@ function App() {
         </div>
 
       </div>
-
-      {/* { reminder && <Reminder note = {reminder}/> }
-
-      { notes && <Notes notes = {notes}/> }
-
-      { form && <Form /> }
-
-      <button className = {style.addingButton} onClick = {showForm}> </button> */}
 
     </div>
   );

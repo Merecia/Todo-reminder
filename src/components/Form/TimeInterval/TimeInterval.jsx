@@ -3,7 +3,6 @@ import { addDays, addHours, addMinutes,
     addMonths, convertTimeZone, 
     getDateWithoutTime, getTimeWithoutDate 
 } from '../../../helper/date';
-import Dropdown from '../../GUI/Dropdown/Dropdown';
 import style from './TimeInterval.module.scss';
 
 function TimeInterval({ date, setDate }) {
@@ -44,19 +43,19 @@ function TimeInterval({ date, setDate }) {
             switch (unitOfTime) {
     
                 case 'minutes':
-                    updatedDate = addMinutes(date, amountOfTime);
+                    updatedDate = addMinutes(updatedDate, amountOfTime);
                     break;
         
                 case 'hours':
-                    updatedDate = addHours(date, amountOfTime);
+                    updatedDate = addHours(updatedDate, amountOfTime);
                     break;
         
                 case 'days':
-                    updatedDate = addDays(date, amountOfTime);
+                    updatedDate = addDays(updatedDate, amountOfTime);
                     break;
 
                 case 'months':
-                    updatedDate = addMonths(date, amountOfTime);
+                    updatedDate = addMonths(updatedDate, amountOfTime);
                     break;
                 
                 default:
@@ -68,11 +67,6 @@ function TimeInterval({ date, setDate }) {
 
         setDate(updatedDate);
     }
-
-    const options = [
-        { label: 'минут (минуты)', value: 'timePicker' },
-        { label: 'Через промежуток времени', value: 'timeInterval' }
-    ];
 
     return (
         <div className={style.TimeInterval}>

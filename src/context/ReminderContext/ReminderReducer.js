@@ -1,4 +1,4 @@
-import { UPDATE_FORM, UPDATE_NOTES, UPDATE_REMINDER } from "../types";
+import { UPDATE_FORM, UPDATE_NOTES, UPDATE_REMINDER, UPDATE_SEARCH } from "../types";
 
 
 export const ReminderReducer = (state, action) => {
@@ -21,6 +21,12 @@ export const ReminderReducer = (state, action) => {
             return {
                 ...state,
                 form: action.form
+            }
+
+        case UPDATE_SEARCH:
+            return {
+                ...state,
+                search: action.search
             }
 
         default: return state;

@@ -5,17 +5,16 @@
     backdrop-filter: blur(7px);
     height: 100%;
     display: block;
+    z-index: 100;
 
     .Box {
-        display: flex;
-        justify-content: center;
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         width: 40%;
-        height: 40%;
+        height: 20%;
         margin: auto;
         max-height: 70vh;
         margin-top: calc(100vh - 85vh - 20px);
@@ -24,6 +23,7 @@
         padding: 20px;
         border: 1px solid #999;
         overflow: auto;
+        font-family: Inter;
 
         .CloseIcon {
             content: 'x';
@@ -39,6 +39,16 @@
             text-align: center;
             border: 1px solid #999;
             font-size: 20px;
+        }
+
+        .Title {
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .Describe {
+            font-size: 14px;
         }
     }
 }

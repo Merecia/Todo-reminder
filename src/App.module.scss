@@ -33,8 +33,10 @@
         margin-top: 50px;
         width: 430px;
         height: auto;
+        max-height: 80vh;
         margin: 40px auto;
         border-radius: 10px;
+        overflow-y: scroll;
 
         .Header {
             position: relative;
@@ -105,5 +107,10 @@
                 margin: 0 auto;
             }
         }
+    }
+
+    .MainForm::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
     }
 }
