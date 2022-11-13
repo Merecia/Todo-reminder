@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Todo-reminder/static/css/main.7192c543.css",
+    "main.js": "/Todo-reminder/static/js/main.10bb2295.js",
+    "static/media/flowers.svg": "/Todo-reminder/static/media/flowers.54f78bebfb546c474261.svg",
+    "static/media/Inter-Medium.ttf": "/Todo-reminder/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
+    "static/media/Inter-Regular.ttf": "/Todo-reminder/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/RussoOne-Regular.ttf": "/Todo-reminder/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
+    "static/media/trash.svg": "/Todo-reminder/static/media/trash.e8faa48ee0bfbe02a0f6d56387c05f08.svg",
+    "index.html": "/Todo-reminder/index.html",
+    "main.7192c543.css.map": "/Todo-reminder/static/css/main.7192c543.css.map",
+    "main.10bb2295.js.map": "/Todo-reminder/static/js/main.10bb2295.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7192c543.css",
+    "static/js/main.10bb2295.js"
+  ]
+}
