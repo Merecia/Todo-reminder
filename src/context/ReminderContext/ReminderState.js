@@ -88,6 +88,23 @@ function ReminderState( { children } ) {
         localStorage.setItem('notes', JSON.stringify(notes));
     }
 
+    const changeTaskStatus = id => {
+
+        let notes = state.notes;
+
+        notes.forEach(note => {
+
+            if (note.id === id) {
+                note.completed = !note.completed;
+            }
+
+        })
+
+        updateNotes(notes);
+
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
     const deleteNote = id => {
 
         let notes = state.notes;
@@ -109,7 +126,7 @@ function ReminderState( { children } ) {
             reminder: state.reminder,
             form: state.form,
             search: state.search,
-            addNote, deleteNote, updateNotes,
+            addNote, deleteNote, updateNotes, changeTaskStatus,
             hideReminder, showReminder,
             showForm, hideForm, updateSearch
         }}>

@@ -6,13 +6,20 @@ function Reminder({ note }) {
 
     const {hideReminder} = useReminder();
 
+    function close() {
+
+        document.title = 'Reminder App';
+
+        hideReminder();
+    }
+
     return <div className={style.Reminder}>
 
         <div className={style.Box}>
 
             <span
                 className={style.CloseIcon}
-                onClick={hideReminder}
+                onClick={close}
             >
                 x
             </span>

@@ -45,6 +45,8 @@ function App() {
             describe: note.describe
           });
 
+          document.title = note.title;
+
         }
 
       })

@@ -48,7 +48,8 @@ function Form() {
         addNote({
             title,
             describe,
-            reminderDate
+            reminderDate,
+            completed: false
         });
 
         hideForm();

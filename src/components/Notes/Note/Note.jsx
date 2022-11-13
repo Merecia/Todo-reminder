@@ -4,10 +4,9 @@ import { getPrettyDate, getPrettyTime } from '../../../helper/date';
 import style from './Note.module.scss';
 import trash from '../../../images/trash.svg';
 
-function Note( {id, title, describe, reminderDate} ) {
+function Note( {id, title, describe, reminderDate, completed} ) {
 
-    const {deleteNote} = useReminder();
-    const [completed, setCompleted] = useState(false);
+    const {deleteNote, changeTaskStatus} = useReminder();
 
     let circleColor;
 
@@ -38,7 +37,7 @@ function Note( {id, title, describe, reminderDate} ) {
                 <div 
                     className = {style.Circle} 
                     style = {{backgroundColor: circleColor}}
-                    onClick = {() => setCompleted(!completed)}
+                    onClick = {() => changeTaskStatus(id)}
                 > 
                 </div>
 

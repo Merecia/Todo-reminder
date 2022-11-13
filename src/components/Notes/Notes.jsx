@@ -10,10 +10,12 @@ function Notes( {notes} ) {
     const renderNotes = notes => {
 
         if (search.length !== 0) {
+            
             notes = notes.filter(note => 
-                note.title.includes(search) || 
-                note.describe.includes(search)
+                note.title.toLowerCase().includes(search.toLowerCase()) || 
+                note.describe.toLowerCase().includes(search.toLowerCase())
             );
+            
         }
         
         return notes.map(note => renderNote(note));
@@ -28,6 +30,7 @@ function Notes( {notes} ) {
                 title = {note.title} 
                 describe = {note.describe}
                 reminderDate = {note.reminderDate}
+                completed = {note.completed}
             />
         );
     }
